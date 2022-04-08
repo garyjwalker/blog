@@ -20,6 +20,9 @@ app.get("/", (req, res) => {
   res.render("home", {message: homeStartingContent})
 })
 
+app.get("/home", (req, res) => {
+  res.redirect("/")
+})
 
 // Route home requests.
 app.get("/about", (req, res) => {
