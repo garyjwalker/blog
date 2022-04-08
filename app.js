@@ -20,10 +20,12 @@ app.get("/", (req, res) => {
   res.render("home", {message: homeStartingContent})
 })
 
+
 // Route home requests.
 app.get("/home", (req, res) => {
   res.redirect("/")
 })
+
 
 // Route home requests.
 app.get("/about", (req, res) => {
@@ -34,6 +36,12 @@ app.get("/about", (req, res) => {
 // Route contact requests.
 app.get("/contact", (req, res) => {
   res.render("contact", {message: contactContent})
+})
+
+
+// Route compose requests.
+app.get("/compose", (req, res) => {
+  res.render("compose")
 })
 
 
