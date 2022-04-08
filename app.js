@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 // Route home requests.
 app.get("/about", (req, res) => {
-  res.render("contact", {message: aboutContent})
+  res.render("about", {message: aboutContent})
 })
 
 
