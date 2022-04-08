@@ -45,6 +45,13 @@ app.get("/compose", (req, res) => {
 })
 
 
+// Route post from compose.
+app.post("/compose", (req, res) => {
+  console.log(req.body)
+  res.redirect("/")
+})
+
+
 // Start listening on port.
 app.listen(3000, function() {
   console.log("Server started on port 3000");
