@@ -14,8 +14,22 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+
+// Route root / requests.
 app.get("/", (req, res) => {
   res.render("home", {message: homeStartingContent})
+})
+
+
+// Route home requests.
+app.get("/about", (req, res) => {
+  res.render("contact", {message: aboutContent})
+})
+
+
+// Route contact requests.
+app.get("/contact", (req, res) => {
+  res.render("contact", {message: contactContent})
 })
 
 
