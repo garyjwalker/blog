@@ -14,10 +14,12 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+// For storing posts.
+const posts = []
 
 // Route root / requests.
 app.get("/", (req, res) => {
-  res.render("home", {message: homeStartingContent})
+  res.render("home", {posts: posts})
 })
 
 
@@ -47,7 +49,13 @@ app.get("/compose", (req, res) => {
 
 // Route post from compose.
 app.post("/compose", (req, res) => {
-  console.log(req.body)
+  const post = {
+    title: req.body.title,
+    content: req.body.content,
+  }
+
+  posts.push(post)
+  
   res.redirect("/")
 })
 
