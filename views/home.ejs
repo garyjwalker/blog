@@ -1,9 +1,11 @@
 <%- include('partials/header') -%>
 <h1>Home</h1>
-<% for(let i = 0; i < posts.length; i++) { %>
+
+<% posts.forEach(post => { %>
 <div class="card">
-    <h3 class="card-title"><%= posts[i].title %></h3>
-    <p class="card-text"><%= posts[i].content %></p>
+    <h3 class="card-title"><%= post.title %></h3>
+    <p class="card-text"><%= post.content %></p>
 </div>
-<% } %>
+<% }) %>
+
 <%- include('partials/footer') -%>
