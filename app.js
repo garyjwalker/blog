@@ -16,6 +16,7 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 // For storing posts.
 const posts = []
 
+
 // Route root / requests.
 app.get("/", (req, res) => {
   res.render("home", {posts: posts})
@@ -24,7 +25,14 @@ app.get("/", (req, res) => {
 
 // Route home requests.
 app.get("/home", (req, res) => {
-  res.redirect("/")
+  res.redirect("/home")
+})
+
+
+// Route home post requests.
+app.get("/posts/:postName", (req, res) => {
+  console.log(req.params.postName)
+  res.render("post", {post: posts[0]})
 })
 
 
@@ -55,7 +63,7 @@ app.post("/compose", (req, res) => {
 
   posts.push(post)
   
-  res.redirect("/")
+  res.redirect("compose")
 })
 
 
