@@ -4,7 +4,10 @@
 <% posts.forEach(post => { %>
 <div class="card">
     <h3 class="card-title"><%= post.title %></h3>
-    <p class="card-text"><%= post.content %></p>
+    <p class="card-text">
+        <%= post.content.slice(0,100)  + "..." %>
+        <a href="posts/<%= post.title %>">Read More</a>
+    </p>
 </div>
 <% }) %>
 
